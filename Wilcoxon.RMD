@@ -1,0 +1,34 @@
+---
+title: "Ordinal Regression to Predict Employee Recommendation for Workplace"
+output: html_notebook
+---
+# Verify directory
+```{r}
+getwd()
+```
+
+# Import Dependencies
+
+# Upload File
+```{r}
+Employee_Survey <- read.csv("Employee_Survey.csv", header=TRUE)
+Employee_Survey <- subset(Employee_Survey, select = -c(Employee_id))
+head(Employee_Survey)
+```
+# Median Score for Entire Data Set
+```{r}
+#Median score was artifically created around 7!"
+med = 7
+
+```
+
+
+# Explantory Vector
+```{r}
+x=Employee_Survey$I.feel.that.a.workplace.childcare.center.would.beneft.my.work.life.
+median(x)
+```
+# One-Sample Wilcoxon Signed Rank Test
+```{r}
+wilcox.test(x,mu = 7)
+```
